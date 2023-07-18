@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Geometry Genius</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@1.13.0/dist/full.css" rel="stylesheet">
+</head>
+
+<body>
+    
+  <header class="flex justify-between items-center py-4 px-8 bg-gray-200">
+    <div class="text-lg font-bold">Interactive Geometry Genius</div>
+    <a href="blog.html" target="_blank"
+      class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded">Blog</a>
+  </header>
+
+  <main class="container mx-auto my-8">
+    <div class="flex flex-wrap">
+      <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4">
+        <div class="card p-6">
+          <img src="images/triangle.png" alt="Triangle" class="mb-4">
+          <h2 class="text-xl font-semibold">Triangle</h2>
+          <p class="mb-4">Formula: Area (A) = 0.5 x b x h</p>
+          <input type="number" id="triangle-base" class="input mb-2" placeholder="Base (b)">
+          <input type="number" id="triangle-height" class="input mb-4" placeholder="Height (h)">
+          <button onclick="calculateTriangle()" class="btn btn-primary">Calculate</button>
+        </div>
+      </div>
+
+      <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4">
+        <div class="card p-6">
+          <img src="images/rectangle.png" alt="Rectangle" class="mb-4">
+          <h2 class="text-xl font-semibold">Rectangle</h2>
+          <p class="mb-4">Formula: Area (A) = w x l</p>
+          <input type="number" id="rectangle-width" class="input mb-2" placeholder="Width (w)">
+          <input type="number" id="rectangle-length" class="input mb-4" placeholder="Length (l)">
+          <button onclick="calculateRectangle()" class="btn btn-primary">Calculate</button>
+        </div>
+      </div>
+
+      <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4">
+        <div class="card p-6">
+          <img src="images/parallelogram.png" alt="Parallelogram" class="mb-4">
+          <h2 class="text-xl font-semibold">Parallelogram</h2>
+          <p class="mb-4">Formula: Area (A) = b x h</p>
+          <input type="number" id="parallelogram-base" class="input mb-2" value="10" readonly>
+          <input type="number" id="parallelogram-height" class="input mb-4" value="12" readonly>
+          <button onclick="calculateParallelogram()" class="btn btn-primary">Calculate</button>
+        </div>
+      </div>
+
+      <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4">
+        <div class="card p-6">
+          <img src="images/rhombus.png" alt="Rhombus" class="mb-4">
+          <h2 class="text-xl font-semibold">Rhombus</h2>
+          <p class="mb-4">Formula: Area (A) = 0.5 x d1 x d2</p>
+          <input type="number" id="rhombus-diagonal1" class="input mb-2" value="16" readonly>
+          <input type="number" id="rhombus-diagonal2" class="input mb-4" value="8" readonly>
+          <button onclick="calculateRhombus()" class="btn btn-primary">Calculate</button>
+        </div>
+      </div>
+
+      <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4">
+        <div class="card p-6">
+          <img src="images/pentagon.png" alt="Pentagon" class="mb-4">
+          <h2 class="text-xl font-semibold">Pentagon</h2>
+          <p class="mb-4">Formula: Area (A) = 0.5 x p x b</p>
+          <input type="number" id="pentagon-perimeter" class="input mb-2" value="6" readonly>
+          <input type="number" id="pentagon-base" class="input mb-4" placeholder="Base (b)">
+          <button onclick="calculatePentagon()" class="btn btn-primary">Calculate</button>
+        </div>
+      </div>
+
+      <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4">
+        <div class="card p-6">
+          <img src="images/ellipse.png" alt="Ellipse" class="mb-4">
+          <h2 class="text-xl font-semibold">Ellipse</h2>
+          <p class="mb-4">Formula: Area (A) = πab</p>
+          <input type="number" id="ellipse-axis-a" class="input mb-2" value="10" readonly>
+          <input type="number" id="ellipse-axis-b" class="input mb-4" value="4" readonly>
+          <button onclick="calculateEllipse()" class="btn btn-primary">Calculate</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-8">
+        <h2 class="text-2xl font-semibold">Area Calculation</h2>
+        <ul id="area-calculation" class="mt-4"></ul>
+      </div>
+
+    </main>
+
+
+
+
+
+
+
+
+  <script src="js/geometry.js"></script>
+
+</body>
+
+</html>
